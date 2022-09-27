@@ -141,19 +141,19 @@ def runBoostshit(invite: str, amount: int, expires: bool):
                         boost_id = boost["id"]
                         bosted = do_boost(s, token, headers, profile, server_id, boost_id)
                         if bosted:
-                            print(f"{g} > {Fore.WHITE}{profile} {Fore.MAGENTA}BOOSTED {Fore.WHITE}{invite}")
+                            print(f"{g} > {w}{profile} {g}SUCCESFULLY BOOSTED {w}{invite}")
                             boosts_done += 1
                         else:
-                            print(f"{Fore.GREEN} > {Fore.WHITE}{profile} {r}ERROR BOOSTING {Fore.WHITE}{invite}")
+                            print(f"{g} > {w}{profile} {r}USED TOKEN {w}{invite}")
                     removeToken(token)
                     if expires:
                         makeUsed(token)
                 else:
-                    print(f"{r} > {Fore.WHITE}{profile} {r}Error joining {invite}")
+                    print(f"{r} > {w}{profile} {r}ERROR WHILST JOINING {invite}")
 
             else:
                 removeToken(token)
-                print(f"{Fore.GREEN} > {Fore.WHITE}{profile} {r}BROKE ASS DONT GOT NITRO")
+                print(f"{Fore.GREEN} > {w}{profile} {r}ERROR! Possibly No Nitro On the Token")
 
 @tasks.loop(seconds=5.0)
 async def check_used():
