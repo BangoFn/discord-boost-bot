@@ -1,1 +1,1 @@
-python main-obf.py
+python main.py
